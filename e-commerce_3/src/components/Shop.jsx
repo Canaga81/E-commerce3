@@ -1,15 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "../components/Shop.css";
 import Shop_Left_Image from "../images/shop_left.avif";
 import Shop_Top_Image from "../images/shop_top.webp";
 import { FaHeart, FaEye } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 const Shop = ({ shop, Filter, AllCategoriesProduct, addtocart }) => {
+
+  // Toggle Product Detail
+
+  const [showDetail, setShowDetail] = useState(false);
+
+  // Detail Page Data
+
+  const [detail, setDetail] = useState([]);
+
+  // (Eye) Showing Detail
+
+  const detailpage = (product) => {
+    const detailData = [{ product }];
+    const productDetail = detailData[0]["product"];
+    setDetail(productDetail);
+    setShowDetail(true);
+  };
+
+  // (Close) Showing Detail
+
+  const detailpageClose = () => {
+    setShowDetail(false);
+  };
+
   return (
     <>
-      <div className="product_detail">
-        
-      </div>
+      {showDetail ? (
+        <>
+          <div className="product_detail">
+            <button className="close_btn" onClick={() => detailpageClose()}>
+              <IoMdClose />
+            </button>
+
+            <div className="container">
+              <div className="img_box">
+                <img src={detail.image} alt="" />
+              </div>
+              <div className="info">
+                <h4>{detail.cat}</h4>
+                <h2>{detail.Name}</h2>
+                <h3 className="detail_price">${detail.price}</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis dicta, neque saepe ut recusandae perferendis dolore.
+                  Quos quisquam reiciendis laborum perferendis ipsa ipsam autem.
+                </p>
+                <button onClick={() => addtocart(detail)} className="btn">
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
 
       <div className="shop">
         <h2># Shop</h2>
@@ -62,7 +112,7 @@ const Shop = ({ shop, Filter, AllCategoriesProduct, addtocart }) => {
                             <li>
                               <FaHeart />
                             </li>
-                            <li>
+                            <li onClick={() => detailpage(curElm)}>
                               <FaEye />
                             </li>
                           </div>
@@ -71,7 +121,12 @@ const Shop = ({ shop, Filter, AllCategoriesProduct, addtocart }) => {
                         <div className="detail">
                           <h3>{curElm.Name}</h3>
                           <p>${curElm.price}</p>
-                          <button onClick={() => addtocart(curElm)} className="btn">Add To Cart</button>
+                          <button
+                            onClick={() => addtocart(curElm)}
+                            className="btn"
+                          >
+                            Add To Cart
+                          </button>
                         </div>
                       </div>
                     </>

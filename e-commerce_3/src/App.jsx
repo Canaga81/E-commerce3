@@ -66,8 +66,6 @@ function App() {
     }
   };
 
-  console.log(cart);
-
   return (
     <>
       <BrowserRouter>

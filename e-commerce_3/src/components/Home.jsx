@@ -10,13 +10,37 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 import Multi_Banner_1_Image_avif from "../images/Multi-Banner-1.avif";
 import Multi_Banner_2_Image_avif from "../images/Multi-Banner-2.avif";
 import Multi_Banner_3_Image_webp from "../images/Multi-Banner-3.webp";
 import Multi_Banner_4_Image_avif from "../images/Multi-Banner-4.avif";
 import Multi_Banner_5_Image_webp from "../images/Multi-Banner-5.webp";
 
-const Home = ({addtocart}) => {
+const Home = ({ addtocart }) => {
+  // Toggle Product Detail
+
+  const [showDetail, setShowDetail] = useState(false);
+
+  // Detail Page Data
+
+  const [detail, setDetail] = useState([]);
+
+  // (Eye) Showing Detail
+
+  const detailpage = (product) => {
+    const detailData = [{ product }];
+    const productDetail = detailData[0]["product"];
+    setDetail(productDetail);
+    setShowDetail(true);
+  };
+
+  // (Close) Showing Detail
+
+  const detailpageClose = () => {
+    setShowDetail(false);
+  };
+
   // Product Category
 
   const [newProduct, setNewProduct] = useState([]);
@@ -49,7 +73,6 @@ const Home = ({addtocart}) => {
   }, []);
 
   const productcategory = () => {
-
     const newcategory = HomeProduct.filter((x) => {
       return x.type === "new";
     });
@@ -64,11 +87,39 @@ const Home = ({addtocart}) => {
       return x.type === "top";
     });
     setTopProduct(topcategory);
-
   };
 
   return (
     <>
+      {showDetail ? (
+        <>
+          <div className="product_detail">
+            <button className="close_btn" onClick={() => detailpageClose()}>
+              <IoMdClose />
+            </button>
+
+            <div className="container">
+              <div className="img_box">
+                <img src={detail.image} alt="" />
+              </div>
+              <div className="info">
+                <h4>{detail.cat}</h4>
+                <h2>{detail.Name}</h2>
+                <h3 className="detail_price">${detail.price}</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis dicta, neque saepe ut recusandae perferendis dolore.
+                  Quos quisquam reiciendis laborum perferendis ipsa ipsam autem.
+                </p>
+                <button onClick={() => addtocart(detail)} className="btn">
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
+
       <div className="home">
         <div className="top_banner">
           <div className="contant">
@@ -104,7 +155,10 @@ const Home = ({addtocart}) => {
                           <div className="img_box">
                             <img src={curElm.image} alt="" />
                             <div className="icon">
-                              <div className="icon_box">
+                              <div
+                                className="icon_box"
+                                onClick={() => detailpage(curElm)}
+                              >
                                 <FaEye />
                               </div>
                               <div className="icon_box">
@@ -116,7 +170,12 @@ const Home = ({addtocart}) => {
                           <div className="info">
                             <h3>{curElm.Name}</h3>
                             <p>${curElm.price}</p>
-                            <button onClick={() => addtocart(curElm)} className="btn">Add To Cart</button>
+                            <button
+                              onClick={() => addtocart(curElm)}
+                              className="btn"
+                            >
+                              Add To Cart
+                            </button>
                           </div>
                         </div>
                       </>
@@ -225,9 +284,15 @@ const Home = ({addtocart}) => {
                         <h3>{curElm.Name}</h3>
                         <p>${curElm.price}</p>
                         <div className="icon">
-                          <button><FaEye /></button>
-                          <button><FaHeart /></button>
-                          <button><FaCartPlus /></button>
+                          <button>
+                            <FaEye />
+                          </button>
+                          <button>
+                            <FaHeart />
+                          </button>
+                          <button>
+                            <FaCartPlus />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -252,9 +317,15 @@ const Home = ({addtocart}) => {
                         <h3>{curElm.Name}</h3>
                         <p>${curElm.price}</p>
                         <div className="icon">
-                          <button><FaEye /></button>
-                          <button><FaHeart /></button>
-                          <button><FaCartPlus /></button>
+                          <button>
+                            <FaEye />
+                          </button>
+                          <button>
+                            <FaHeart />
+                          </button>
+                          <button>
+                            <FaCartPlus />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -279,9 +350,15 @@ const Home = ({addtocart}) => {
                         <h3>{curElm.Name}</h3>
                         <p>${curElm.price}</p>
                         <div className="icon">
-                          <button><FaEye /></button>
-                          <button><FaHeart /></button>
-                          <button><FaCartPlus /></button>
+                          <button>
+                            <FaEye />
+                          </button>
+                          <button>
+                            <FaHeart />
+                          </button>
+                          <button>
+                            <FaCartPlus />
+                          </button>
                         </div>
                       </div>
                     </div>
