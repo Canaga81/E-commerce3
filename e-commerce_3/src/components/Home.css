@@ -207,6 +207,8 @@
 
 .home .trending .container .left-box .products .container .box .img_box img {
     transition: all 0.15s ease-in;
+    width: 100%;
+    height: 100%;
 }
 
 .home .trending .container .left-box .products .container .box:hover .img_box img {
@@ -452,4 +454,99 @@
 .home .banners .container .right_box .bottom img {
     width: 100%;
     object-fit: cover;
+}
+
+.home .product_type {
+    padding: 20px 30px;
+    width: 100%;
+}
+
+.home .product_type .container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.home .product_type .container .box {
+    width: 360px;
+    height: 100%;
+    border: 3px solid #f6f7f8;
+    overflow: hidden;
+}
+
+.home .product_type .container .box .header {
+    width: 100%;
+    height: 50px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    text-align: center;
+}
+
+.home .product_type .container .box .header h2 {
+    color: #232323;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.home .product_type .container .box .productbox {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #f6f7f8;
+    display: flex;
+    align-items: center;
+}
+
+.home .product_type .container .box .productbox .img-box {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home .product_type .container .box .productbox .img-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.home .product_type .container .box .productbox .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home .product_type .container .box .productbox .detail h3 {
+    font-size: 16px;
+    color: #8a8a8a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home .product_type .container .box .productbox .detail p {
+    color: #fed700;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.home .product_type .container .box .productbox .detail .icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home .product_type .container .box .productbox .detail .icon button {
+    padding: 8px 10px;
+    border: 1px solid #cd1e76;
+    outline: none;
+    border-radius: 50%;
+    background-color: #cd1e76;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.home .product_type .container .box .productbox .detail .icon button:hover {
+    background-color: #fff;
+    color: #cd1e76;
 }

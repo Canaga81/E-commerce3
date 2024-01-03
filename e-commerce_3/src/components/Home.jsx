@@ -20,6 +20,8 @@ const Home = () => {
   // Product Category
 
   const [newProduct, setNewProduct] = useState([]);
+  const [featureProduct, setFeatureProduct] = useState([]);
+  const [topProduct, setTopProduct] = useState([]);
 
   // Trending Product
 
@@ -47,10 +49,22 @@ const Home = () => {
   }, []);
 
   const productcategory = () => {
+
     const newcategory = HomeProduct.filter((x) => {
       return x.type === "new";
     });
     setNewProduct(newcategory);
+
+    const featuredcategory = HomeProduct.filter((x) => {
+      return x.type === "featured";
+    });
+    setFeatureProduct(featuredcategory);
+
+    const topcategory = HomeProduct.filter((x) => {
+      return x.type === "top";
+    });
+    setTopProduct(topcategory);
+
   };
 
   return (
@@ -200,6 +214,60 @@ const Home = () => {
               </div>
 
               {newProduct.map((curElm, idx) => {
+                return (
+                  <>
+                    <div className="productbox" key={idx}>
+                      <div className="img-box">
+                        <img src={curElm.image} alt="" />
+                      </div>
+
+                      <div className="detail">
+                        <h3>{curElm.Name}</h3>
+                        <p>${curElm.price}</p>
+                        <div className="icon">
+                          <button><FaEye /></button>
+                          <button><FaHeart /></button>
+                          <button><FaCartPlus /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+            <div className="box">
+              <div className="header">
+                <h2>Top Product</h2>
+              </div>
+
+              {topProduct.map((curElm, idx) => {
+                return (
+                  <>
+                    <div className="productbox" key={idx}>
+                      <div className="img-box">
+                        <img src={curElm.image} alt="" />
+                      </div>
+
+                      <div className="detail">
+                        <h3>{curElm.Name}</h3>
+                        <p>${curElm.price}</p>
+                        <div className="icon">
+                          <button><FaEye /></button>
+                          <button><FaHeart /></button>
+                          <button><FaCartPlus /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+            <div className="box">
+              <div className="header">
+                <h2>Featured Product</h2>
+              </div>
+
+              {featureProduct.map((curElm, idx) => {
                 return (
                   <>
                     <div className="productbox" key={idx}>

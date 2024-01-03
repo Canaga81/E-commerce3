@@ -9,7 +9,6 @@ import Image_P8_Webp from '../images/p8.webp';
 import Image_P9_jpg from '../images/p9.jpg';
 import Image_P10_jpg from '../images/p10.jpg';
 import Image_P11_jpg from '../images/p11.jpg';
-import Image_P12_jpg from '../images/p12.jpg';
 
 const HomeProduct = [
     
@@ -35,7 +34,7 @@ const HomeProduct = [
         price: 45,
         image: Image_P3_Webp,
         cat: 'watch',
-        type: 'new',
+        type: 'featured',
     },
     {
         id: 4,
@@ -83,7 +82,7 @@ const HomeProduct = [
         price: 69,
         image: Image_P8_Webp,
         cat: 'phone',
-        type: 'top',
+        type: 'featured',
     },
     {
         id: 10,
@@ -105,9 +104,9 @@ const HomeProduct = [
         id: 12,
         Name: 'Product_12',
         price: 69,
-        image: Image_P12_jpg,
-        cat: 'speaker',
-        type: 'top',
+        image: Image_P1_Webp,
+        cat: 'tv',
+        type: 'new',
     },
 
 ]
