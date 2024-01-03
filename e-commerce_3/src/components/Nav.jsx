@@ -9,7 +9,7 @@ import { CiLogout } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ search, setSearch, searchproduct }) => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   return (
     <header className="header">
@@ -27,8 +27,8 @@ const Nav = () => {
           <img src={LogoImg} />
         </div>
         <div className="search_box">
-          <input type="text" placeholder="Search" />
-          <button>
+          <input type="text" value={search} placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
+          <button onClick={searchproduct}>
             <FaSearchPlus />
           </button>
         </div>
@@ -83,15 +83,34 @@ const Nav = () => {
                 <p>Please Login 😊</p>
               </div>
             </div>
-          )
-          }
+          )}
           <div className="nav">
             <ul>
-                <li><Link to='/' className="link">Home</Link></li>
-                <li><Link to='/shop' className="link">Shop</Link></li>
-                <li><Link to='/collection' className="link">Collection</Link></li>
-                <li><Link to='/about' className="link">About</Link></li>
-                <li><Link to='/contack' className="link">Contack</Link></li>
+              <li>
+                <Link to="/" className="link">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="link">
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link to="/collection" className="link">
+                  Collection
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="link">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contack" className="link">
+                  Contack
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="offer">
