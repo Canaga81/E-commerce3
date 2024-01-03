@@ -16,7 +16,7 @@ import Multi_Banner_3_Image_webp from "../images/Multi-Banner-3.webp";
 import Multi_Banner_4_Image_avif from "../images/Multi-Banner-4.avif";
 import Multi_Banner_5_Image_webp from "../images/Multi-Banner-5.webp";
 
-const Home = () => {
+const Home = ({addtocart}) => {
   // Product Category
 
   const [newProduct, setNewProduct] = useState([]);
@@ -116,7 +116,7 @@ const Home = () => {
                           <div className="info">
                             <h3>{curElm.Name}</h3>
                             <p>${curElm.price}</p>
-                            <button className="btn">Add To Cart</button>
+                            <button onClick={() => addtocart(curElm)} className="btn">Add To Cart</button>
                           </div>
                         </div>
                       </>

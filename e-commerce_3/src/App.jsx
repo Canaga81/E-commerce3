@@ -7,6 +7,11 @@ import HomeProduct from "./components/Home_Products";
 import { useState } from "react";
 
 function App() {
+
+  // Add To Cart
+
+  const [cart, setCart] = useState([]);
+
   // Shop Search Filter UseState
 
   const [search, setSearch] = useState("");
@@ -46,6 +51,23 @@ function App() {
     }
   };
 
+  // Add to Cart
+
+  const addtocart = (product) => {
+    const exist = cart.find((x) => {
+      return x.id === product.id;
+    });
+    if (exist) {
+      alert("This product is already added in cart !");
+    } 
+    else {
+      setCart([...cart, { ...product, qty: 1 }]);
+      alert("Added To Cart !")
+    }
+  };
+
+  console.log(cart);
+
   return (
     <>
       <BrowserRouter>
@@ -58,6 +80,9 @@ function App() {
           shop={shop}
           Filter={Filter}
           AllCategoriesProduct={AllCategoriesProduct}
+          addtocart={addtocart}
+          cart={cart}
+          setCart={setCart}
         />
         <Footer />
       </BrowserRouter>

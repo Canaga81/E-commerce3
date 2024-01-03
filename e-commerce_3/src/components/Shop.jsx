@@ -4,9 +4,13 @@ import Shop_Left_Image from "../images/shop_left.avif";
 import Shop_Top_Image from "../images/shop_top.webp";
 import { FaHeart, FaEye } from "react-icons/fa";
 
-const Shop = ({ shop, Filter, AllCategoriesProduct }) => {
+const Shop = ({ shop, Filter, AllCategoriesProduct, addtocart }) => {
   return (
     <>
+      <div className="product_detail">
+        
+      </div>
+
       <div className="shop">
         <h2># Shop</h2>
         <p>Home . Shop</p>
@@ -67,7 +71,7 @@ const Shop = ({ shop, Filter, AllCategoriesProduct }) => {
                         <div className="detail">
                           <h3>{curElm.Name}</h3>
                           <p>${curElm.price}</p>
-                          <button className="btn">Add To Cart</button>
+                          <button onClick={() => addtocart(curElm)} className="btn">Add To Cart</button>
                         </div>
                       </div>
                     </>
