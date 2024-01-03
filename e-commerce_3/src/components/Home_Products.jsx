@@ -65,7 +65,7 @@ const HomeProduct = [
         Name: 'Product_7',
         price: 36,
         image: Image_P6_Webp,
-        cat: 'headphone',
+        cat: 'phone',
         type: 'top',
     },
     {
@@ -81,7 +81,7 @@ const HomeProduct = [
         Name: 'Product_9',
         price: 69,
         image: Image_P8_Webp,
-        cat: 'phone',
+        cat: 'electronics',
         type: 'featured',
     },
     {
@@ -89,7 +89,7 @@ const HomeProduct = [
         Name: 'Product_10',
         price: 69,
         image: Image_P10_jpg,
-        cat: 'speaker',
+        cat: 'headphone',
         type: 'top',
     },
     {
@@ -97,7 +97,7 @@ const HomeProduct = [
         Name: 'Product_11',
         price: 69,
         image: Image_P11_jpg,
-        cat: 'speaker',
+        cat: 'watch',
         type: 'top',
     },
     {

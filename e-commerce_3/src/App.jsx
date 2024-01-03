@@ -4,10 +4,27 @@ import { BrowserRouter } from 'react-router-dom';
 import Rout from './components/Rout';
 import Footer from './components/Footer';
 import HomeProduct from './components/Home_Products';
+import { useState } from 'react';
 
 function App() {
 
-  const [shop, setShop] = useState(HomeProduct)
+  // Shop Products
+
+  const [shop, setShop] = useState(HomeProduct);
+
+  // Shop Category Filter
+
+  const Filter = (x) => {
+    const cateFilter = HomeProduct.filter((product) => {
+      return product.cat === x;
+    })
+
+    setShop(cateFilter);
+  }
+
+  const AllCategoriesProduct = () => {
+    setShop(HomeProduct)
+  }
 
   return (
     
@@ -16,7 +33,7 @@ function App() {
       <BrowserRouter>
 
         <Nav />
-        <Rout shop={shop} />
+        <Rout shop={shop} Filter={Filter} AllCategoriesProduct={AllCategoriesProduct} />
         <Footer />
 
       </BrowserRouter>
