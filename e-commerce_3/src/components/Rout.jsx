@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Shop from './Shop';
 import Cart from './Cart';
+import Contact from './Contact';
 
 const Rout = ({shop, Filter, AllCategoriesProduct, addtocart, cart, setCart}) => {
 
@@ -11,6 +12,7 @@ const Rout = ({shop, Filter, AllCategoriesProduct, addtocart, cart, setCart}) =>
             <Route path='/' element={<Home addtocart={addtocart} />} />
             <Route path='/shop' element={<Shop shop={shop} Filter={Filter} AllCategoriesProduct={AllCategoriesProduct} addtocart={addtocart} />} />
             <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+            <Route path='/contact' element={<Contact />} />
         </Routes>
     </>
   )
