@@ -14,8 +14,8 @@ import { IoMdClose } from "react-icons/io";
 import Multi_Banner_1_Image_avif from "../images/Multi-Banner-1.avif";
 // import Multi_Banner_2_Image_avif from "../images/Multi-Banner-2.avif";
 import Multi_Banner_3_Image_webp from "../images/Multi-Banner-3.webp";
-import Multi_Banner_4_Image_avif from "../images/Multi-Banner-4.avif";
-import Multi_Banner_5_Image_webp from "../images/Multi-Banner-5.webp";
+// import Multi_Banner_4_Image_avif from "../images/Multi-Banner-4.avif";
+// import Multi_Banner_5_Image_webp from "../images/Multi-Banner-5.webp";
 
 const Home = ({ addtocart }) => {
   // Toggle Product Detail
@@ -255,11 +255,11 @@ const Home = ({ addtocart }) => {
             <div className="right_box">
               <div className="top">
                 <img src={Multi_Banner_3_Image_webp} alt="" />
-                <img src={Multi_Banner_4_Image_avif} alt="" />
+                <img src={Multi_Banner_1_Image_avif} alt="" />
               </div>
 
               <div className="bottom">
-                <img src={Multi_Banner_5_Image_webp} alt="" />
+                <img src={Multi_Banner_3_Image_webp} alt="" />
               </div>
             </div>
           </div>
