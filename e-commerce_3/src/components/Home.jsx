@@ -12,7 +12,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import Multi_Banner_1_Image_avif from "../images/Multi-Banner-1.avif";
-import Multi_Banner_2_Image_avif from "../images/Multi-Banner-2.avif";
+// import Multi_Banner_2_Image_avif from "../images/Multi-Banner-2.avif";
 import Multi_Banner_3_Image_webp from "../images/Multi-Banner-3.webp";
 import Multi_Banner_4_Image_avif from "../images/Multi-Banner-4.avif";
 import Multi_Banner_5_Image_webp from "../images/Multi-Banner-5.webp";
@@ -248,7 +248,7 @@ const Home = ({ addtocart }) => {
                 <img src={Multi_Banner_1_Image_avif} alt="" />
               </div>
               <div className="box">
-                <img src={Multi_Banner_2_Image_avif} alt="" />
+                <img src={Multi_Banner_1_Image_avif} alt="" />
               </div>
             </div>
 
